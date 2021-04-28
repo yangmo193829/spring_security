@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <style type="text/css">
+        html {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            font-style: sans-serif;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            background-color: #2e3031;
+        }
+
+        #login {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -150px 0 0 -150px;
+            width: 300px;
+            height: 300px;
+        }
+
+        #login h1 {
+            color: #fff;
+            text-shadow: 0 0 10px;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin: 0.67em 0;
+        }
+
+        input {
+            width: 278px;
+            height: 18px;
+            margin-bottom: 10px;
+            outline: none;
+            padding: 10px;
+            font-size: 13px;
+            color: #000;
+            border-top: 1px solid #312E3D;
+            border-left: 1px solid #312E3D;
+            border-right: 1px solid #312E3D;
+            border-bottom: 1px solid #56536A;
+            border-radius: 4px;
+            background-color: #ffffff;
+        }
+
+        .but {
+            width: 300px;
+            min-height: 20px;
+            display: block;
+            background-color: #0d8050;
+            border: 1px solid #3762bc;
+            color: #fff;
+            padding: 9px 14px;
+            font-size: 15px;
+            line-height: normal;
+            border-radius: 5px;
+            margin: 0;
+        }
+    </style>
+    <script type="text/javascript" src="/js/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+<div id="login">
+    <h1>绑定系统账号</h1>
+    <form method="post" action="/otherlogin">
+        <input type="hidden" name="scope" id="scope" value="github">
+        <input type="hidden" name="token" id="token" value="">
+        <input type="text" required="required" placeholder="用户名" name="username"></input>
+        <input type="password" required="required" placeholder="密码" name="password"></input>
+        <button class="but" type="submit">绑定并登陆账户</button>
+    </form>
+</div>
+</body>
+
+<script>
+
+    $(function () {
+        // 获取路径中的参数
+        function getUrlParms(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null)
+                return unescape(r[2]);
+            return null;
+        }
+
+        var token = getUrlParms("token");
+        var scope = getUrlParms("scope");
+        $("#token").val(token);
+        $("#scope").val(scope);
+    });
+
+</script>
+
+
+</html>
