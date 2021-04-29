@@ -24,7 +24,8 @@ public class OtherUserServiceImpl implements OtherUsersService {
     @Override
     public OtherSysUser getOtherSysUserByUUIDAndScope(String scope, String uuid) {
         log.info("获取第三方系统用户入参：[scope:{},uuid:{}]", scope, uuid);
-        OtherSysUser otherSysUser = otherSysUserDao.findByUuidAndScope(uuid,scope);
+        OtherSysUser otherSysUser = new OtherSysUser();
+        //= otherSysUserDao.findByUuidAndScope(uuid,scope);
         log.info("获取第三方系统用户出参：[OtherSysUser:{}]", otherSysUser);
         return otherSysUser;
     }

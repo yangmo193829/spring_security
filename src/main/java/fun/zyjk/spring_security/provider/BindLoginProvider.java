@@ -166,7 +166,7 @@ public class BindLoginProvider implements AuthenticationProvider, InitializingBe
         // 增加保存第三方用户信息
         BindAuthenticationToken bind = (BindAuthenticationToken) authentication;
         OtherSysUser bindInfo = (OtherSysUser) bind.getBindInfo();
-        this.getOtherSysUserDao().save(bindInfo);
+        //this.getOtherSysUserDao().save(bindInfo);
 
         return createSuccessAuthentication(principalToReturn, authentication, user);
     }

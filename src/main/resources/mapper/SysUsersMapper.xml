@@ -6,7 +6,7 @@
 
     <resultMap type="SysUsers" id="SysUserResult">
         <id     property="id"       column="id"      />
-        <result property="userName"     column="username"    />
+        <result property="username"     column="username"    />
         <result property="realname"     column="realname"    />
         <result property="password"        column="password"        />
         <result property="gender"  column="gender"  />
@@ -22,39 +22,18 @@
         <result property="updateBy"     column="update_by"    />
         <result property="updateTime"   column="update_time"  />
         <result property="remark"       column="remark"       />
-        <association property="dept"    column="dept_id" javaType="SysDept" resultMap="deptResult" />
-        <collection  property="roles"   javaType="java.util.List"        resultMap="RoleResult" />
-    </resultMap>
-
-
-    <resultMap id="RoleResult" type="SysRole">
-        <id     property="roleId"       column="role_id"        />
-        <result property="roleName"     column="role_name"      />
-        <result property="roleKey"      column="role_key"       />
-        <result property="roleSort"     column="role_sort"      />
-        <result property="dataScope"     column="data_scope"    />
-        <result property="status"       column="role_status"    />
     </resultMap>
 
     <sql id="selectUserVo">
         SELECT
-            sysusers0_.id AS id1_4_,
-            sysusers0_.create_time AS create_t2_4_,
-            sysusers0_.create_user AS create_u3_4_,
-            sysusers0_.email AS email4_4_,
-            sysusers0_.gender AS gender5_4_,
-            sysusers0_.is_enable AS is_enabl6_4_,
-            sysusers0_.mobile AS mobile7_4_,
-            sysusers0_. PASSWORD AS password8_4_,
-            sysusers0_.realname AS realname9_4_,
-            sysusers0_.username AS usernam10_4_
+           *
         FROM
-            sys_users sysusers0_
+            sys_users su
     </sql>
 
 
     <select id="findByUsername" parameterType="String" resultMap="SysUserResult">
         <include refid="selectUserVo"/>
-        where u.user_name = #{userName}
+        where su.username = #{username}
     </select>
 </mapper>

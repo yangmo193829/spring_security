@@ -10,8 +10,4 @@ public interface UsersService {
      * @return
      */
     ReturnData loadUserByUsername(String userName);
-
-
-
-
 }

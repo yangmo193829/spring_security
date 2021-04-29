@@ -1,14 +1,12 @@
 package fun.zyjk.spring_security.sys.dao;
 
-import fun.zyjk.spring_security.sys.entity.UserRole;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import org.mapstruct.Mapper;
 
-import java.util.List;
+@Mapper
+public interface UserRoleDao {
 
-@Repository
-public interface UserRoleDao extends JpaRepository<UserRole, Long> {
-
+/*
     List<UserRoleDao> findByUserId(Long userId);
+*/
 
 }

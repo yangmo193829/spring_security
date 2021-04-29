@@ -21,13 +21,7 @@ spring:
 
 #    redisson:
 #      config: classpath:redisson.yml
-  jpa: #jpa配置
-    properties:
-      hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
-      hibernate.current_session_context_class: org.springframework.orm.hibernate5.SpringSessionContext
-    hibernate:
-      ddl-auto: none
-    show-sql: true
+
   mvc:
     static-path-pattern: /**
   resources:
@@ -46,5 +40,13 @@ oauth2:
       client_id: 8d5f66c25383612cd6556e3b6273a2cddcf143be463b43b28902ed80bb89363f
       client_secret: 2882d5ce5db4b25c90746a85b29e49d220b3877a9b4f0263f46c5e277b4c4f5f
       redirectUri: http://localhost:8081/api/v1/oauth/callback/gitee
+# MyBatis配置
+mybatis:
+  # 搜索指定包别名
+  typeAliasesPackage: fun.zyjk.spring_security.sys.entity
+  # 配置mapper的扫描，找到所有的mapper.xml映射文件
+  mapperLocations: classpath*:mapper/**/*Mapper.xml
+  configuration:
+    map-underscore-to-camel-case: true
 
 

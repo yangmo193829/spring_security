@@ -1,10 +1,8 @@
 package fun.zyjk.spring_security.sys.dao;
 
-import fun.zyjk.spring_security.sys.entity.RolePermission;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import org.mapstruct.Mapper;
 
-@Repository
-public interface RolePermissionDao extends JpaRepository<RolePermission, Long> {
+@Mapper
+public interface RolePermissionDao {
 
 }

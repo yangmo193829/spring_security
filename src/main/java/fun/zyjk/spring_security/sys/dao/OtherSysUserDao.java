@@ -1,12 +1,10 @@
 package fun.zyjk.spring_security.sys.dao;
 
-import fun.zyjk.spring_security.sys.entity.OtherSysUser;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import org.mapstruct.Mapper;
 
-@Repository
-public interface OtherSysUserDao extends JpaRepository<OtherSysUser, Long> {
+@Mapper
+public interface OtherSysUserDao  {
 
-    OtherSysUser findByUuidAndScope(String uuid, String scope);
+    //OtherSysUser findByUuidAndScope(String uuid, String scope);
 
 }

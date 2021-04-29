@@ -1,24 +1,16 @@
 package fun.zyjk.spring_security.sys.entity;
 
-import javax.persistence.*;
-import java.util.Date;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.TemporalType;
+import java.util.Date;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
 public class SysPermission {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     //主键
     private Long id;
     //父id
@@ -41,13 +33,11 @@ public class SysPermission {
     private String remark;
     //创建时间
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    @Temporal(TemporalType.TIMESTAMP)
     private Date createDate;
     //创建者
     private String creator;
     //更新时间
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    @Temporal(TemporalType.TIMESTAMP)
     private Date updateDate;
     //更新人
     private String updater;
