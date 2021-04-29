@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
  * <h1>oauth controller 第三方登陆controller</h1>
  *
  * @author yzk
+ * 暂时无用
  */
 @Api(value = "第三方登陆", tags = {"第三方登陆"})
 @Controller

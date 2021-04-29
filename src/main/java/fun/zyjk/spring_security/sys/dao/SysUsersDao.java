@@ -9,7 +9,4 @@ public interface SysUsersDao extends JpaRepository<SysUsers, Long> {
 
     SysUsers findByUsername(String username);
 
-
-
-
 }

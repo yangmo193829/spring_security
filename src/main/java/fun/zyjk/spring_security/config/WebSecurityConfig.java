@@ -122,7 +122,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .successHandler(userAuthenticationSuccessHandler)
                 .failureHandler(userAuthenticationFailureHandler).and()
                 .sessionManagement((sessionManagement) -> sessionManagement
-                        .maximumSessions(100)
+                        .maximumSessions(1)
                         .sessionRegistry(sessionRegistry()));
 
 

@@ -11,7 +11,10 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public enum UserStatusEnum {
-    // 不可用
+    /**
+     * 不可用
+     *
+     */
     DISABLE(0, "用户不可用"),
     ENABLED(1, "用户可用");
 
